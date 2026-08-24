@@ -186,6 +186,10 @@ p {
   gap: 4rem;
 }
 
+.about-copy p:first-child {
+  margin-top: 0;
+}
+
 #hero-subtitle {
   max-width: 800px;
   margin: 0.35rem auto 0.75rem;
@@ -278,7 +282,7 @@ p {
 .project-page-title {
   grid-column: 1 / -1;
   margin-bottom: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .project-copy {
