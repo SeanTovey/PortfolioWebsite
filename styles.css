@@ -172,11 +172,15 @@ p {
 }
 
 .portrait-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: min(100%, 280px);
   aspect-ratio: 3 / 4;
   margin: 0 0 0 auto;
   border: 2px dashed var(--muted-text);
-  background: var(--surface);
+  background: #1a1a1a;
+  text-align: center;
 }
 
 .about-layout {
@@ -300,10 +304,15 @@ p {
 }
 
 .project-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: 1;
   border: 1px solid #0e0e0e;
-  background: var(--surface);
+  background: #1a1a1a;
+  color: var(--muted-text);
+  text-align: center;
 }
 
 footer {
