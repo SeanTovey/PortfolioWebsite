@@ -313,7 +313,7 @@ p {
 .project-copy {
   grid-column: 1;
   grid-row: 2;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 0 1.5rem;
   background: #0e0e0e;
 }
 
@@ -347,10 +347,9 @@ p {
 }
 
 .project-back-link {
-  position: absolute;
-  left: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  width: fit-content;
+  margin: 0;
 }
 
 .project-image-placeholder {
@@ -401,6 +400,17 @@ footer {
   padding: 2rem;
   border-top: 1px solid var(--border);
   color: var(--muted-text);
+}
+
+.project-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background: var(--background);
+}
+
+.project-footer .project-back-link {
+  margin-left: 0;
 }
 
 @media (max-width: 600px) {
@@ -487,11 +497,8 @@ footer {
     gap: 0.5rem;
   }
 
-  .project-back-link {
-    position: static;
-    transform: none;
-    grid-column: 1 / -1;
-    grid-row: 4;
+  .project-footer .project-back-link {
+    margin-left: -1rem;
   }
 
   .about-layout {
