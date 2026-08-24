@@ -315,6 +315,25 @@ p {
   text-align: center;
 }
 
+.contact-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 600px;
+  gap: 0.75rem;
+  margin: 0 auto;
+}
+
+.contact-image-grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid #0e0e0e;
+  background: #1a1a1a;
+  color: var(--muted-text);
+  text-align: center;
+}
+
 footer {
   max-width: 1100px;
   margin: 0 auto;
