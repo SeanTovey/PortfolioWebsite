@@ -138,6 +138,20 @@ nav li a:focus-visible {
     rgb(14 14 14 / 0%) 85%
   );
   content: "";
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #ffffff 25%,
+    #ffffff 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #ffffff 25%,
+    #ffffff 75%,
+    transparent 100%
+  );
   pointer-events: none;
 }
 
@@ -154,6 +168,7 @@ section {
 h1,
 h2,
 h3 {
+  margin: 0 0 2rem;
   line-height: 1.1;
 }
 
@@ -280,7 +295,8 @@ p {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   align-items: start;
-  gap: 4rem;
+  column-gap: 4rem;
+  row-gap: 2rem;
 }
 
 .project-page-title {
@@ -385,7 +401,8 @@ footer {
 
   .project-layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    column-gap: 0;
+    row-gap: 2rem;
   }
 
   .about-layout {
