@@ -26,6 +26,14 @@ body {
   line-height: 1.6;
 }
 
+#Project-Summary {
+  font-size: 1.25rem;
+}
+
+#About-Me {
+  font-size: 1.25rem;
+}
+
 a {
   color: var(--accent);
 }
