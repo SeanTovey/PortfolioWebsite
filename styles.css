@@ -48,19 +48,6 @@ header {
   background: var(--background);
 }
 
-.header-logo-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border: 2px dashed var(--muted-text);
-  background: rgb(14 14 14 / 75%);
-  border-radius: 50%;
-  text-align: center;
-}
-
 .header-brand {
   display: flex;
   align-items: center;
@@ -196,6 +183,7 @@ p {
   width: min(100%, 280px);
   aspect-ratio: 3 / 4;
   margin: 0 0 0 auto;
+  border: 2px solid var(--text);
   object-fit: cover;
 }
 
@@ -371,21 +359,29 @@ p {
   max-width: 600px;
   gap: 0.75rem;
   margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.contact-content > h2 {
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .contact-image-grid > a {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1;
-  border: 1px solid #0e0e0e;
-  background: #1a1a1a;
+  width: 50px;
+  height: 50px;
+  justify-self: center;
+  border: 0;
+  background: transparent;
 }
 
 .contact-image-grid img {
   display: block;
-  width: 70%;
-  height: 70%;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -436,11 +432,6 @@ footer {
   .website-banner > img,
   .website-banner > video {
     width: min(100%, 420px);
-  }
-
-  .header-logo-slot {
-    width: 40px;
-    height: 40px;
   }
 
   main {
