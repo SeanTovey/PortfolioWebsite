@@ -191,11 +191,12 @@ p {
   max-width: 650px;
 }
 
-.portrait-placeholder {
+.portrait-image {
+  display: block;
   width: min(100%, 280px);
   aspect-ratio: 3 / 4;
   margin: 0 0 0 auto;
-  border: 2px dashed var(--muted-text);
+  object-fit: cover;
 }
 
 .about-layout {
@@ -513,7 +514,7 @@ footer {
     gap: 2rem;
   }
 
-  .portrait-placeholder {
+  .portrait-image {
     margin: 0 auto;
   }
 
