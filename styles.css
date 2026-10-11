@@ -107,6 +107,10 @@ nav li a:focus-visible {
   height: auto;
 }
 
+.website-banner > video {
+  cursor: pointer;
+}
+
 .hero-content {
   position: relative;
   display: flex;
@@ -220,6 +224,7 @@ p {
   padding: 0 0 5px;
   color: var(--text);
   text-shadow: 0 2px 8px rgb(14 14 14 / 85%);
+  pointer-events: none;
 }
 
 #hero h1,

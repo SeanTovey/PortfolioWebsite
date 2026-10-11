@@ -27,7 +27,7 @@
 
   <div class="banner-area">
     <figure class="website-banner">
-      <video autoplay loop muted playsinline aria-hidden="true">
+      <video autoplay loop muted playsinline tabindex="0" role="button" aria-label="Pause or play banner video">
         <source src="Videos/VideoBanner.mp4" type="video/mp4">
       </video>
     </figure>
@@ -69,6 +69,26 @@
   <footer>
     <!-- <p>&copy; 2026 Sean Tovey</p> -->
   </footer>
+
+  <script>
+    const bannerVideo = document.querySelector(".website-banner video");
+
+    function toggleBannerVideo() {
+      if (bannerVideo.paused) {
+        bannerVideo.play();
+      } else {
+        bannerVideo.pause();
+      }
+    }
+
+    bannerVideo.addEventListener("click", toggleBannerVideo);
+    bannerVideo.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleBannerVideo();
+      }
+    });
+  </script>
 
 </body>
 </html>
