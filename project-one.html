@@ -58,28 +58,53 @@
         <div class="project-gallery" aria-label="Dream Parasite project images">
           <figure class="project-gallery-item">
             <img src="Images/DreamParasite/Poster_1.png" alt="Dream Parasite poster" tabindex="0">
-            <!-- <figcaption>Poster 1</figcaption> -->
           </figure>
           <figure class="project-gallery-item">
             <img src="Images/DreamParasite/Poster_2.png" alt="Dream Parasite poster 2" tabindex="0">
-            <!-- <figcaption>Poster 2</figcaption> -->
           </figure>
           <figure class="project-gallery-item">
             <img src="Images/DreamParasite/Poster_3.png" alt="Dream Parasite poster 3" tabindex="0">
-            <!-- <figcaption>Poster 3</figcaption> -->
           </figure>
           <figure class="project-gallery-item">
             <img src="Images/DreamParasite/Poster_4.png" alt="Dream Parasite poster 4" tabindex="0">
-            <!-- <figcaption>Poster 4</figcaption> -->
           </figure>
         </div>
       </div>
     </section>
   </main>
 
+  <dialog class="image-lightbox" aria-label="Enlarged project image">
+    <img src="" alt="">
+  </dialog>
+
   <footer class="project-footer">
     <a class="project-back-link" href="index.html#projects">Back to projects</a>
     <!-- <p>&copy; 2026 Sean Tovey</p> -->
   </footer>
+
+  <script>
+    const lightbox = document.querySelector(".image-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    document.querySelectorAll(".project-gallery-item > img").forEach((image) => {
+      const openLightbox = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      };
+
+      image.addEventListener("click", openLightbox);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox();
+        }
+      });
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>
