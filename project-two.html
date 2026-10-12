@@ -42,19 +42,63 @@
             allowfullscreen></iframe>
         </div>
         <div class="project-gallery" aria-label="Lighthouse Keeper project images">
-          <div class="project-image-placeholder" role="img" aria-label="Lighthouse Keeper image placeholder one">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Lighthouse Keeper image placeholder two">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Lighthouse Keeper image placeholder three">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Lighthouse Keeper image placeholder four">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Lighthouse Keeper image placeholder five">Image coming soon</div>
+          <figure class="project-gallery-item">
+            <img src="Images/Lighthouse/LighthouseScene_1.png" alt="Lighthouse Keeper scene, view 1" tabindex="0">
+            <figcaption>Lighthouse scene 1</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/Lighthouse/LighthouseScene_2.png" alt="Lighthouse Keeper scene, view 2" tabindex="0">
+            <figcaption>Lighthouse scene 2</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/Lighthouse/LighthouseInterior_3.png" alt="Lighthouse Keeper interior, view 3" tabindex="0">
+            <figcaption>Lighthouse interior 3</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/Lighthouse/LighthouseInterior_4.png" alt="Lighthouse Keeper interior, view 4" tabindex="0">
+            <figcaption>Lighthouse interior 4</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/Lighthouse/LighthouseInterior_5.png" alt="Lighthouse Keeper interior, view 5" tabindex="0">
+            <figcaption>Lighthouse interior 5</figcaption>
+          </figure>
         </div>
       </div>
     </section>
   </main>
 
+  <dialog class="image-lightbox" aria-label="Enlarged project image">
+    <img src="" alt="">
+  </dialog>
+
   <footer class="project-footer">
     <a class="project-back-link" href="index.html#projects">Back to projects</a>
     <!-- <p>&copy; 2026 Sean Tovey</p> -->
   </footer>
+
+  <script>
+    const lightbox = document.querySelector(".image-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    document.querySelectorAll(".project-gallery-item > img").forEach((image) => {
+      const openLightbox = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      };
+
+      image.addEventListener("click", openLightbox);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox();
+        }
+      });
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>

@@ -350,6 +350,50 @@ p {
   aspect-ratio: 808 / 632;
 }
 
+.project-gallery-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.project-gallery-item > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 808 / 632;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.project-gallery-item > figcaption {
+  padding-top: 0.25rem;
+  color: var(--muted-text);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.image-lightbox {
+  position: fixed;
+  width: min(95vw, 1200px);
+  max-width: none;
+  max-height: 95vh;
+  padding: 2.5rem 1rem 1rem;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.image-lightbox::backdrop {
+  background: rgb(0 0 0 / 70%);
+}
+
+.image-lightbox > img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(95vh - 3.5rem);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 .project-back-link {
   display: block;
   width: fit-content;

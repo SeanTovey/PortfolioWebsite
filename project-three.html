@@ -34,19 +34,63 @@
       </div>
       <div class="project-media">
         <div class="project-gallery" aria-label="Project Three project images">
-          <div class="project-image-placeholder" role="img" aria-label="Project Three image placeholder one">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Three image placeholder two">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Three image placeholder three">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Three image placeholder four">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Three image placeholder five">Image coming soon</div>
+          <figure class="project-gallery-item">
+            <img src="Images/EleventhPlanet/Poster-1.png" alt="Eleventh Planet poster" tabindex="0">
+            <figcaption>Project poster</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/EleventhPlanet/Installation-2.png" alt="Eleventh Planet installation" tabindex="0">
+            <figcaption>Installation</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/EleventhPlanet/Model-3.png" alt="Eleventh Planet 3D model" tabindex="0">
+            <figcaption>3D model</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/EleventhPlanet/MacheModel-4.png" alt="Eleventh Planet mache model, view 2" tabindex="0">
+            <figcaption>Model maquette</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/EleventhPlanet/MacheModel-5.png" alt="Eleventh Planet maquette" tabindex="0">
+            <figcaption>Model maquette detail</figcaption>
+          </figure>
         </div>
       </div>
     </section>
   </main>
 
+  <dialog class="image-lightbox" aria-label="Enlarged project image">
+    <img src="" alt="">
+  </dialog>
+
   <footer class="project-footer">
     <a class="project-back-link" href="index.html#projects">Back to projects</a>
     <!-- <p>&copy; 2026 Sean Tovey</p> -->
   </footer>
+
+  <script>
+    const lightbox = document.querySelector(".image-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    document.querySelectorAll(".project-gallery-item > img").forEach((image) => {
+      const openLightbox = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      };
+
+      image.addEventListener("click", openLightbox);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox();
+        }
+      });
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>

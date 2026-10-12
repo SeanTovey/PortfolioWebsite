@@ -34,16 +34,54 @@
       </div>
       <div class="project-media">
         <div class="project-gallery" aria-label="Project Four project images">
-          <div class="project-image-placeholder" role="img" aria-label="Project Four image placeholder one">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Four image placeholder two">Image coming soon</div>
-          <div class="project-image-placeholder" role="img" aria-label="Project Four image placeholder three">Image coming soon</div>
+          <figure class="project-gallery-item">
+            <img src="Images/SmallProjects/Shadow_1.png" alt="Small project: Shadow, image 1" tabindex="0">
+            <figcaption>Shadow — image 1</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/SmallProjects/Shadow_2.png" alt="Small project: Shadow, image 2" tabindex="0">
+            <figcaption>Shadow — image 2</figcaption>
+          </figure>
+          <figure class="project-gallery-item">
+            <img src="Images/SmallProjects/Kitchen_3.png" alt="Small project: Kitchen" tabindex="0">
+            <figcaption>Kitchen</figcaption>
+          </figure>
         </div>
       </div>
     </section>
   </main>
 
+  <dialog class="image-lightbox" aria-label="Enlarged project image">
+    <img src="" alt="">
+  </dialog>
+
   <footer class="project-footer">
     <a class="project-back-link" href="index.html#projects">Back to projects</a>
   </footer>
+
+  <script>
+    const lightbox = document.querySelector(".image-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    document.querySelectorAll(".project-gallery-item > img").forEach((image) => {
+      const openLightbox = () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      };
+
+      image.addEventListener("click", openLightbox);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox();
+        }
+      });
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>
