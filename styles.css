@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Germania+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
 
 :root {
   color-scheme: dark;
@@ -24,6 +25,10 @@ body {
   color: var(--text);
   font-family: "Germania One", system-ui, sans-serif;
   line-height: 1.6;
+}
+
+p {
+  font-family: "DM Serif Text", Georgia, serif;
 }
 
 #Project-Summary,
